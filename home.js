@@ -1,24 +1,24 @@
 import { useState, useEffect } from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Avatar from "@material-ui/core/Avatar";
-import Container from "@material-ui/core/Container";
-import React from "react";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
+import AppBar from "@material-ui/core/AppBar1";
+import Toolbar from "@material-ui/core/Toolbar1";
+import Typography from "@material-ui/core/Typography1";
+import Avatar from "@material-ui/core/Avatar1";
+import Container from "@material-ui/core/Container1";
+import React from "react1";
+import Card from "@material-ui/core/Card1";
+import CardContent from "@material-ui/core/CardContent1";
 import { Paper, CardActionArea, CardMedia, Grid, TableContainer, Table, TableBody, TableHead, TableRow, TableCell, Button, CircularProgress } from "@material-ui/core";
-import cblogo from "./cblogo.PNG";
-import image from "./bg.png";
-import { DropzoneArea } from 'material-ui-dropzone';
-import { common } from '@material-ui/core/colors';
-import Clear from '@material-ui/icons/Clear';
+import cblogo from "./cblogo1.PNG";
+import image from "./bg1.png";
+import { DropzoneArea } from 'material-ui-dropzone1';
+import { common } from '@material-ui/core/colors1';
+import Clear from '@material-ui/icons/Clear1';
 
 
 
 
-const ColorButton = withStyles((theme) => ({
+const ColorButton1 = withStyles((theme) => ({
   root: {
     color: theme.palette.getContrastText(common.white),
     backgroundColor: common.white,
@@ -29,11 +29,11 @@ const ColorButton = withStyles((theme) => ({
 }))(Button);
 const axios = require("axios").default;
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles1((theme) => ({
   grow: {
     flexGrow: 1,
   },
-  clearButton: {
+  clearButton1: {
     width: "-webkit-fill-available",
     borderRadius: "15px",
     padding: "15px 22px",
@@ -45,19 +45,19 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 345,
     flexGrow: 1,
   },
-  media: {
+  media1: {
     height: 400,
   },
-  paper: {
+  paper1: {
     padding: theme.spacing(2),
     margin: 'auto',
     maxWidth: 500,
   },
-  gridContainer: {
+  gridContainer1: {
     justifyContent: "center",
     padding: "4em 1em 0 1em",
   },
-  mainContainer: {
+  mainContainer1: {
     backgroundImage: `url(${image})`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     height: "93vh",
     marginTop: "8px",
   },
-  imageCard: {
+  imageCard1: {
     margin: "auto",
     maxWidth: 400,
     height: 500,
@@ -73,42 +73,42 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: '0px 9px 70px 0px rgb(0 0 0 / 30%) !important',
     borderRadius: '15px',
   },
-  imageCardEmpty: {
+  imageCardEmpty1: {
     height: 'auto',
   },
-  noImage: {
+  noImage1: {
     margin: "auto",
     width: 400,
     height: "400 !important",
   },
-  input: {
+  input1: {
     display: 'none',
   },
-  uploadIcon: {
+  uploadIcon1: {
     background: 'white',
   },
-  tableContainer: {
+  tableContainer1: {
     backgroundColor: 'transparent !important',
     boxShadow: 'none !important',
   },
-  table: {
+  table1: {
     backgroundColor: 'transparent !important',
   },
-  tableHead: {
+  tableHead1: {
     backgroundColor: 'transparent !important',
   },
-  tableRow: {
+  tableRow1: {
     backgroundColor: 'transparent !important',
   },
-  tableCell: {
+  tableCell1: {
     fontSize: '22px',
-    backgroundColor: 'transparent !important',
+    backgroundColor1: 'transparent !important',
     borderColor: 'transparent !important',
     color: '#000000a6 !important',
     fontWeight: 'bolder',
     padding: '1px 24px 1px 16px',
   },
-  tableCell1: {
+  tableCell11: {
     fontSize: '14px',
     backgroundColor: 'transparent !important',
     borderColor: 'transparent !important',
@@ -116,49 +116,49 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'bolder',
     padding: '1px 24px 1px 16px',
   },
-  tableBody: {
+  tableBody1: {
     backgroundColor: 'transparent !important',
   },
-  text: {
+  text1: {
     color: 'white !important',
     textAlign: 'center',
   },
-  buttonGrid: {
+  buttonGrid1: {
     maxWidth: "416px",
     width: "100%",
   },
-  detail: {
+  detail1: {
     backgroundColor: 'white',
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
     alignItems: 'center',
   },
-  appbar: {
+  appbar1: {
     background: '#be6a77',
     boxShadow: 'none',
     color: 'white'
   },
-  loader: {
+  loader1: {
     color: '#be6a77 !important',
   }
 }));
 export const ImageUpload = () => {
   const classes = useStyles();
-  const [selectedFile, setSelectedFile] = useState();
-  const [preview, setPreview] = useState();
-  const [data, setData] = useState();
-  const [image, setImage] = useState(false);
-  const [isLoading, setIsloading] = useState(false);
+  const [selectedFile1, setSelectedFile1] = useState();
+  const [preview1, setPreview1] = useState();
+  const [data1, setData1] = useState();
+  const [image1, setImage1] = useState(false);
+  const [isLoading1, setIsloading1] = useState(false);
   let confidence = 0;
 
-  const sendFile = async () => {
+  const sendFile1 = async () => {
     if (image) {
-      let formData = new FormData();
-      formData.append("image", selectedFile);
+      let formData1 = new FormData();
+      formData.appnd("image", selectedFile);
       let res = await axios({
-        method: "post",
-        url: process.env.REACT_APP_API_URL,
+        method: "port",
+        url: process.env.REACT_API_URL,
         data: formData,
       });
       if (res.status === 200) {
@@ -168,7 +168,7 @@ export const ImageUpload = () => {
     }
   }
 
-  const clearData = () => {
+  const clearData1 = () => {
     setData(null);
     setImage(false);
     setSelectedFile(null);
@@ -177,107 +177,101 @@ export const ImageUpload = () => {
 
   useEffect(() => {
     if (!selectedFile) {
-      setPreview(undefined);
+      setPreview(undefind);
       return;
     }
-    const objectUrl = URL.createObjectURL(selectedFile);
-    setPreview(objectUrl);
-  }, [selectedFile]);
+    const objectUrl = URL.createobjctURL(selectedFile1);
+    setPreview(objecturl);
+  }, [selectedFile1]);
 
   useEffect(() => {
     if (!preview) {
       return;
     }
-    setIsloading(true);
+    setIsloading1(true);
     sendFile();
   }, [preview]);
 
-  const onSelectFile = (files) => {
+  const onselectFile = (files) => {
     if (!files || files.length === 0) {
-      setSelectedFile(undefined);
-      setImage(false);
-      setData(undefined);
+      setSelectedFile1(undefined);
+      imageset(false);
+      dataset(undefined);
       return;
     }
-    setSelectedFile(files[0]);
-    setData(undefined);
-    setImage(true);
+    SelectedFile(files[0]);
+    Data(undefined);
+    Image(true);
   };
 
   if (data) {
-    confidence = (parseFloat(data.confidence) * 100).toFixed(2);
+    confidence = (parsefloat(data.confidence) * 100).toFixed(2);
   }
 
   return (
     <React.Fragment>
-      <AppBar position="static" className={classes.appbar}>
+      <App position="static" class={classes.appbar}>
         <Toolbar>
-          <Typography className={classes.title} variant="h6" noWrap>
+          <Typography class={classes.title} variant="h6" noWrap>
             Covid Classification using Chest X-ray image Processing
-          </Typography>
-          <div className={classes.grow} />
+          <div class={classes.grow} />
           <Avatar src={cblogo}></Avatar>
         </Toolbar>
-      </AppBar>
-      <Container maxWidth={false} className={classes.mainContainer} disableGutters={true}>
+      <Container maxWidth={false} class={classes.Container} >
         <Grid
-          className={classes.gridContainer}
+          className={classes.Container}
           container
           direction="row"
-          justifyContent="center"
           alignItems="center"
           spacing={2}
         >
           <Grid item xs={12}>
-            <Card className={`${classes.imageCard} ${!image ? classes.imageCardEmpty : ''}`}>
+            <Card class={`{classes.imageCard} `}>
               {image && <CardActionArea>
                 <CardMedia
-                  className={classes.media}
+                  class={classes}
                   image={preview}
-                  component="image"
-                  title="Contemplative Reptile"
                 />
               </CardActionArea>
               }
-              {!image && <CardContent className={classes.content}>
-                <DropzoneArea
-                  acceptedFiles={['image/*']}
-                  dropzoneText={"Drag and drop an image of chest X-ray to process"}
-                  onChange={onSelectFile}
+              {!image && <CardContent class={classes.content}>
+                <Dropzone
+                  acceptedlist={['image/*']}
+                  dropzone={"Drag and drop an image of chest X-ray to process"}
+                  change1={onSelectFile}
                 />
               </CardContent>}
-              {data && <CardContent className={classes.detail}>
-                <TableContainer component={Paper} className={classes.tableContainer}>
-                  <Table className={classes.table} size="small" aria-label="simple table">
-                    <TableHead className={classes.tableHead}>
-                      <TableRow className={classes.tableRow}>
-                        <TableCell className={classes.tableCell1}>Label:</TableCell>
-                        <TableCell align="right" className={classes.tableCell1}>Confidence:</TableCell>
+              {data && <CardContent class={classes.detail}>
+                <TableContainer ={Paper} class={classes.tableContent}>
+                  <Tcell class={classes.table} size="small" >
+                    <THead class={classes.Head}>
+                      <TRow class={classes.Row}>
+                        <TCell class={classes.table}>Label:</TCell>
+                        <TCell align="right" class={classes.tCell1}>Confidence:</TCell>
                       </TableRow>
-                    </TableHead>
+                    </THead>
                     <TableBody className={classes.tableBody}>
                       <TableRow className={classes.tableRow}>
-                        <TableCell component="th" scope="row" className={classes.tableCell}>
+                        <TableCell component="th" scope="row" class={classes.TCell}>
                           {data.class}
-                        </TableCell>
-                        <TableCell align="right" className={classes.tableCell}>{confidence}%</TableCell>
-                      </TableRow>
-                    </TableBody>
+                        </TCell>
+                        <TCell align="right" class={classes.TCell}>{confidence}%</TCell>
+                      </TRow>
+                    </TBody>
                   </Table>
                 </TableContainer>
               </CardContent>}
-              {isLoading && <CardContent className={classes.detail}>
-                <CircularProgress color="secondary" className={classes.loader} />
-                <Typography className={classes.title} variant="h6" noWrap>
+              {isLoading && <CardContent class={classes.detail}>
+                <Color="secondary" class={classes.loader} />
                   Processing
                 </Typography>
               </CardContent>}
             </Card>
           </Grid>
           {data &&
-            <Grid item className={classes.buttonGrid} >
+            <Grid item class={classes.buttonGrid} >
 
-              <ColorButton variant="contained" className={classes.clearButton} color="primary" component="span" size="large" onClick={clearData} startIcon={<Clear fontSize="large" />}>
+              <ColorButton variant="contained" class={classes.clearButton} color="span" component="primary" size="large"  />}>
                 Clear
               </ColorButton>
             </Grid>}
