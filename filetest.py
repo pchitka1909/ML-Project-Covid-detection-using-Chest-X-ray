@@ -16,10 +16,10 @@ from PIL import Image
 import tensorflow as tf
 
 app = FastAPI()
-BATCH_SIZE = 1
-IMAGE_SIZE = 256
-CHANNELS=2
-EPOCHS=50
+BatchSize = 1
+ImageSize = 256
+Channel=2
+Epochs=50
 
 origins = [
     "http://localhost:3004",
@@ -27,19 +27,17 @@ origins = [
 ]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    origins=origins,
+    credentials=True,
+    methods=["*"],
+    headers=["*"],
 )
 
 MODEL = tf.keras.models.load_model("/Users/pooja/Desktop/ML Project/models/1")
 
-CLASS_NAMES = ['Covid Negative', 'Covid Positive']
+ClassList = ['Covid Negative', 'Covid Positive']
 
-@app.get("/ping")
-async def ping():
-    return "Hello, I am alive"
+
 
 def read_file_as_image(data) -> np.ndarray:
     image = np.array(Image.open(BytesIO(data)))
@@ -54,10 +52,10 @@ async def predict(
     
     predictions = MODEL.predict(img_batch)
 
-    predicted_class = CLASS_NAMES[np.argmax(predictions[0])]
+    predicted_class = ClassList[np.argmax(predictions[0])]
     confidence = np.max(predictions[0])
     return {
-        'class': predicted_class,
+        'class': predictedClass,
         'confidence': float(confidence)
     }
 
@@ -78,7 +76,7 @@ async def image(image: UploadFile = File(...)):
     dataset = tf.keras.preprocessing.image_dataset_from_directory(
         os.getcwd(),
         shuffle=True,
-        image_size=(IMAGE_SIZE,IMAGE_SIZE),
+        image_size=(256,256),
         )  
     #print('123') 
     import numpy as np
